@@ -9,7 +9,7 @@ const app2 = express();
 mongoose.connect(process.env.CONNECTIONSTRING,(err,connected)=>{
 
     if(err){
-        console.log("Error: "+err);
+        // console.log("Error: "+err);
         return;
     }else{
         console.log("db Connected Successfully");
@@ -17,7 +17,7 @@ mongoose.connect(process.env.CONNECTIONSTRING,(err,connected)=>{
     
 });
 
-app.use(express.urlencoded());
+app.use(express.json());
 
 app.use("/api/auth",AuthRoutes);
 app2.use("/api/app",AppRoute);
